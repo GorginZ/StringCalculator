@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "/Users/georgia.leng/.dotnet/store/|arch|/|tfm|",
+      "/Users/georgia.leng/.nuget/packages"
+    ]
+  }
+}
