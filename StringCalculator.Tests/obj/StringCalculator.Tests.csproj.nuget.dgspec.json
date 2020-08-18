@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/georgia.leng/Desktop/C#/StringCalculator/StringCalculator.csproj": {}
+    "/Users/georgia.leng/Desktop/C#/StringCalculator/StringCalculator.Tests/StringCalculator.Tests.csproj": {}
   },
   "projects": {
-    "/Users/georgia.leng/Desktop/C#/StringCalculator/StringCalculator.csproj": {
+    "/Users/georgia.leng/Desktop/C#/StringCalculator/StringCalculator.Tests/StringCalculator.Tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/georgia.leng/Desktop/C#/StringCalculator/StringCalculator.csproj",
-        "projectName": "StringCalculator",
-        "projectPath": "/Users/georgia.leng/Desktop/C#/StringCalculator/StringCalculator.csproj",
+        "projectUniqueName": "/Users/georgia.leng/Desktop/C#/StringCalculator/StringCalculator.Tests/StringCalculator.Tests.csproj",
+        "projectName": "StringCalculator.Tests",
+        "projectPath": "/Users/georgia.leng/Desktop/C#/StringCalculator/StringCalculator.Tests/StringCalculator.Tests.csproj",
         "packagesPath": "/Users/georgia.leng/.nuget/packages/",
-        "outputPath": "/Users/georgia.leng/Desktop/C#/StringCalculator/obj/",
+        "outputPath": "/Users/georgia.leng/Desktop/C#/StringCalculator/StringCalculator.Tests/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/georgia.leng/.nuget/NuGet/NuGet.Config"
@@ -35,6 +35,24 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "dependencies": {
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[16.5.0, )"
+            },
+            "coverlet.collector": {
+              "target": "Package",
+              "version": "[1.2.0, )"
+            },
+            "xunit": {
+              "target": "Package",
+              "version": "[2.4.0, )"
+            },
+            "xunit.runner.visualstudio": {
+              "target": "Package",
+              "version": "[2.4.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
