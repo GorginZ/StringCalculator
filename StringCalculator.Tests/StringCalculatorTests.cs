@@ -21,5 +21,11 @@ namespace StringCalculator.UnitTests
           var result = Program.StringCalc("4,5,6,4,3");
           Assert.Equal(result, "22");
         }
+          [Fact]
+        public void NewLineOrCommarSeperatorShouldReturnSum()
+        {
+          var result = Program.StringCalc("1,2\n3");
+          Assert.Equal(result, "6");
+        }
     }
 }

@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Text.RegularExpressions;
+using System.Collections.Generic; 
 
 namespace StringCalculator
 {
@@ -11,14 +13,13 @@ namespace StringCalculator
             Console.WriteLine(StringCalc(numbers));
         }
         public static string StringCalc(string numbers)
-        {
-            var newNums = numbers.Split(",");
+        {   
+       
+            string[] newNums = Regex.Split(numbers, @"[,\n]");
+            
             var res = 0;
-            int count = 0;
-            //refactor to not use loop?
             foreach (string element in newNums)
             {
-                count++;
                 int workingNum = Int32.Parse(element);
                 res += workingNum;
             }
