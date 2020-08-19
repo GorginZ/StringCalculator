@@ -16,9 +16,8 @@ namespace StringCalculator
     {
 
       string[] newNums = Regex.Split(numbers, @"[^0-9]+");
-
-
       var res = 0;
+//added tryparse and something to handle if any empty chars slip through the regex (which they are)
       foreach (string element in newNums)
       {
         int workingNum;
@@ -32,9 +31,7 @@ namespace StringCalculator
         {
           continue;
         }
-
       }
-
       return res.ToString();
     }
   }
