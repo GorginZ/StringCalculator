@@ -27,5 +27,12 @@ namespace StringCalculator.UnitTests
           var result = Program.StringCalc("1,2\n3");
           Assert.Equal(result, "6");
         }
+        [Fact]
+           public void SupportsOtherDelimiters()
+           
+        {
+          var result = Program.StringCalc("//;\n1;2");
+          Assert.Equal(result, "3");
+        }
     }
 }

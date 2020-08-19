@@ -14,11 +14,16 @@ namespace StringCalculator
         }
         public static string StringCalc(string numbers)
         {   
-       
-            string[] newNums = Regex.Split(numbers, @"[,\n]");
+            // var newString = Regex.Replace(numbers, @"[^0-9]",""); 
             
+            // @"[,;\n;]"
+             string[] newNums = Regex.Split(numbers, @"[^0-9]+");
+             var newString = newNums.ToString();
+             newString = Regex.Replace(newString, @"[^0-9]", "");
+             string[] workingNums = newString.Split();
+             
             var res = 0;
-            foreach (string element in newNums)
+            foreach (string element in workingNums)
             {
                 int workingNum = Int32.Parse(element);
                 res += workingNum;
