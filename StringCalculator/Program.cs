@@ -15,7 +15,8 @@ namespace StringCalculator
     }
     public static string Add(string numbers)
     {
-
+      //step 6 calls for NO NEGATIVES. So we check for negatives first and throw
+      //exception with the list of negative numbers appended as requested.
       var exceptionMessage = new StringBuilder($"Negatives not allowed: ");
       Regex negs = new Regex(@"-[0-9]+");
       MatchCollection matches = negs.Matches(numbers);
