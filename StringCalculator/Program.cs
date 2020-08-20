@@ -28,12 +28,12 @@ namespace StringCalculator
       {
         throw new Exception(exceptionMessage.ToString().Trim(','));
       }
-
+      //should I refactor the regex to be a positive match?
       string[] newNums = Regex.Split(numbers, @"[^0-9]+");
       var sum = 0;
       int workingNum;
       bool resBool;
-      //added tryparse and something to handle if any empty chars slip through the regex (which they are)
+    //resBool because empty characters slipping through regex
       foreach (string element in newNums)
       {
         resBool = int.TryParse(element, out workingNum);
