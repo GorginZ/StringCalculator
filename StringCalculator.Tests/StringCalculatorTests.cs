@@ -47,6 +47,13 @@ namespace StringCalculator.UnitTests
       var result = Program.Add("1000,1001,2");
       Assert.Equal("2",result);
     }
+ [Fact]
+    public void Step9DelimitersAnyLength()
+
+    {
+      var result = Program.Add("//[***]\n1***2***3");
+      Assert.Equal("6",result);
+    }
 
   }
 }
