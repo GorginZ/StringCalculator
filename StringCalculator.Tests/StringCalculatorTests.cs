@@ -34,5 +34,11 @@ namespace StringCalculator.UnitTests
           var result = Program.StringCalc("//;\n1;2");
           Assert.Equal(result, "3");
         }
-    }
+       [Fact]
+           public void CallingWithaNegativeShouldThrowException()
+           
+        {
+          var result = Program.StringCalc("-1,2,-3");
+          Assert.Equal(result, "Negatives not allowed: -1, -3");
+        }}
 }
