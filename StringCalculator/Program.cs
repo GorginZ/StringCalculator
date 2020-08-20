@@ -11,43 +11,39 @@ namespace StringCalculator
     {
       Console.WriteLine("Welcome to step 4 calculator enter some numers eg: 2,5,2,1,3");
       var numbers = Console.ReadLine();
-      Console.WriteLine(StringCalc(numbers));
+      Console.WriteLine(Add(numbers));
     }
-    public static string StringCalc(string numbers)
+    public static string Add(string numbers)
     {
 
-        var exceptionMessage = new StringBuilder($"Negatives not allowed:");
-        Regex negs = new Regex(@"(?<=-)[0-9]");
-        MatchCollection matches = negs.Matches(numbers);
-        foreach (Match match in matches)
-        {
-        exceptionMessage.Append(match);
-        Console.WriteLine(exceptionMessage);
-        }
- string[] newNums = Regex.Split(numbers, @"[^0-9]+");
-      var res = 0;
-       int workingNum;
-        bool resBool;
+      var exceptionMessage = new StringBuilder($"Negatives not allowed: ");
+      Regex negs = new Regex(@"-[0-9]+");
+      MatchCollection matches = negs.Matches(numbers);
+      foreach (Match match in matches)
+      {
+        exceptionMessage.Append($"{match},");
+      }
+      if (matches.Count > 0)
+      {
+        throw new Exception(exceptionMessage.ToString().Trim(','));
+      }
 
-
+      string[] newNums = Regex.Split(numbers, @"[^0-9]+");
+      var sum = 0;
+      int workingNum;
+      bool resBool;
       //added tryparse and something to handle if any empty chars slip through the regex (which they are)
       foreach (string element in newNums)
       {
-       
         resBool = int.TryParse(element, out workingNum);
-       
-        if (resBool == false)
+
+        if (resBool == true && workingNum < 1000)
         {
-          continue;
-        }
-      
-         if (resBool == true)
-        {
-          res += workingNum;
+          sum += workingNum;
         }
       }
-    
-      return res.ToString();
+
+      return sum.ToString();
     }
   }
 }
